@@ -1,11 +1,13 @@
 import unittest
 from datetime import datetime
 from unittest.mock import patch
+from main import Trip, TripLeg, TripLegType, Traveller, TripManager, TripCoordinator, TravellerManager
 
 class TestTravelManagementSystem(unittest.TestCase):
 
     def setUp(self):
         self.trip = Trip("Test Trip", datetime(2023, 6, 1), 7, "test@example.com")
+        self.trip.trip_legs = []  # Initialize trip_legs attribute
         self.trip_leg = TripLeg("New York", "Los Angeles", "ABC Airlines", "Flight", TripLegType.TRANSFER_POINT, 500.0)
         self.traveller = Traveller("John Doe", "123 Main St", datetime(1990, 1, 1), "555-1234", "123456789")
 
