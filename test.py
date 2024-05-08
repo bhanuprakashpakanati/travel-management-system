@@ -9,13 +9,13 @@ class TestTravelManagementSystem(unittest.TestCase):
         self.trip = Trip("Test Trip", datetime(2023, 6, 1), 7, "test@example.com")
         self.trip.trip_legs = []  # Initialize trip_legs attribute
         self.trip_leg = TripLeg("New York", "Los Angeles", "ABC Airlines", "Flight", TripLegType.TRANSFER_POINT, 500.0)
-        self.traveller = Traveller("John Doe", "123 Main St", datetime(1990, 1, 1), "555-1234", "123456789")
+        self.traveller = Traveller("south Hampton", "123 Main St", datetime(1990, 1, 1), "555-1234", "123456789")
 
     def test_trip_creation(self):
         self.assertEqual(self.trip.name, "Test Trip")
         self.assertEqual(self.trip.start_date, datetime(2023, 6, 1))
         self.assertEqual(self.trip.duration, 7)
-        self.assertEqual(self.trip.contact_info, "test@example.com")
+        self.assertEqual(self.trip.contact_info, "test@gmail.com")
         self.assertEqual(len(self.trip.trip_legs), 0)
 
     def test_add_trip_leg(self):
@@ -32,7 +32,7 @@ class TestTravelManagementSystem(unittest.TestCase):
         self.assertEqual(self.trip_leg.cost, 500.0)
 
     def test_traveller_creation(self):
-        self.assertEqual(self.traveller.name, "John Doe")
+        self.assertEqual(self.traveller.name, "south Hampton")
         self.assertEqual(self.traveller.address, "123 Main St")
         self.assertEqual(self.traveller.date_of_birth, datetime(1990, 1, 1))
         self.assertEqual(self.traveller.emergency_contact, "555-1234")
